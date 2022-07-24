@@ -18,3 +18,4 @@ The code is in the main.py file. It contains commands that are specific to membe
 ## Events:
   1. Sends message "so tru" if a message "tru" or "Tru" is sent by a user
   2. Sends message "good morning @user"
+  3. Sends message about Bis the goat if 'Bis' or 'bis' is sent

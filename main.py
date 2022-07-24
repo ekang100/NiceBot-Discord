@@ -27,6 +27,8 @@ async def on_message(message):
     await message.channel.send('so tru')
   if message.content == "morning":
     await message.channel.send(f"good morning {message.author.mention}!")
+  if message.content == "bis" or message.content == "Bis" or message.content == "BIS":
+    await message.channel.send('Dr. Biswaranjan Pani PhD is the greates human being to ever exist. In the future he will be supreme dictator of the Milky Way Galaxy. He mentors Mr. Kyre Coaker but his best friend is Ryan DCunha')
   await bot.process_commands(message)
 
 
