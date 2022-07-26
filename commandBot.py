@@ -1,61 +1,24 @@
-print("main is working")
-
-#import os
+import os
 import discord
-#from keep_alive import keep_alive
-from commandBot import *
-from eventBot import *
-
+import random
 from discord.ext import commands
-#import random
-#import requests
-import asyncio
+from keep_alive import keep_alive
 
-#from constants import (TenorToken, DiscordToken)
-#client = discord.Client()
-
-#embedColour = 0xff0000
-#CommandKey = '$'
-
-# giving the bot a status
 activity = discord.Game(name="ur mom")
 bot = commands.Bot(command_prefix="$", activity=activity)
 
-'''
+print("commandBot works")
+
 # lists for compliment and roast commands
 compliments = ["so smart", "pretty", "hot", "very cool", "biswaranjan-level", "amazing", "so funny", "the funniest mf in the world", "crazy", "the best", "sexy af"]
 
 roasts = ["stupid", "mean", "a bully", "boring", "lame", "racist", "sexist", "ugly", "yucky", "smelly", "small dick energy", "slow", "an npc", "a loser"]
 
-
-@bot.event
+#@bot.event
 # prints in console when bot is ready
-async def on_ready():
-  print("We have logged in as {0.user}".format(bot))
-'''
-sleep(5)
-asyncio.run(compliment(ctx, member))
-asyncio.run(on_message(message))
+#async def on_ready():
+#  print("We have logged in as {0.user}".format(bot))
 
-
-
-'''
-@bot.event
-# sends "so tru" or "morning @author" depending on message given
-async def on_message(message):
-  if message.content == "tru" or message.content == "Tru":
-    await message.channel.send('so tru')
-  if message.content == "morning":
-    await message.channel.send(f"good morning {message.author.mention}!")
-
-  if message.content == "bis" or message.content == "Bis" or message.content == "BIS":
-    await message.channel.send('Dr. Biswaranjan Pani PhD is the greates human being to ever exist. In the future he will be supreme dictator of the Milky Way Galaxy. He mentors Mr. Kyre Coaker but his best friend is Ryan DCunha')
-
-  if message.content == "Jim" or message.content == "jim" or message.content == "JIM":
-    await message.channel.send('WE GO JIM!!!!')
-  await bot.process_commands(message)
-'''
-'''
 ccpRoleId = '<@&904767274131529738>'
 karemRoleId = '<@&904767810427838495>'
 
@@ -113,10 +76,8 @@ async def slap(ctx, member:discord.User=None):
       await ctx.send(f"{ctx.message.author.mention} slaps themselves!") 
   else:
       await ctx.send(f"{ctx.message.author.mention} slaps {member.mention}!")
-'''
 
 # keeping the bot online and obtaining secret token to make it run
-#keep_alive()
-#token = os.environ['TOKEN']
-#bot.run(token)
-  
+keep_alive()
+token = os.environ['TOKEN']
+bot.run(token)
