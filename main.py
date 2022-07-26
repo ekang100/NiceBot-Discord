@@ -1,10 +1,20 @@
 print("main is working")
 
-#import os
+import os
 import discord
-#from keep_alive import keep_alive
-from commandBot import *
-from eventBot import *
+from keep_alive import keep_alive
+from eventBot import messager
+from commandBot import complimentImport
+from commandBot import pong
+from commandBot import ericImport
+from commandBot import karenImport
+from commandBot import roastImport
+from commandBot import slapImport
+import time
+
+print("Nolan")
+
+print("G4")
 
 from discord.ext import commands
 #import random
@@ -33,12 +43,39 @@ roasts = ["stupid", "mean", "a bully", "boring", "lame", "racist", "sexist", "ug
 async def on_ready():
   print("We have logged in as {0.user}".format(bot))
 '''
-sleep(5)
-asyncio.run(compliment(ctx, member))
-asyncio.run(on_message(message))
+time.sleep(5)
 
+@bot.event
+async def on_message(message):
+  await messager(message)
 
+@bot.command(brief="Says pong")
+async def ping(ctx):
+    await pong(ctx)
 
+@bot.command(brief="says ccp is the greatest")
+async def eric(ctx):
+  await ericImport(ctx)
+
+@bot.command(brief="says karem kares")
+async def karen(ctx):
+  await karenImport(ctx)
+
+@bot.command(brief="Says good morning")
+async def morning(ctx):
+  await morningImport(ctx)
+
+@bot.command(brief="Compliment yourself or @ another member")
+async def compliment(ctx):
+  await complimentImport(ctx)
+
+@bot.command(brief="Roast yourself or @ another member")
+async def roast(ctx):
+  await roastImport(ctx)
+
+@bot.command(brief="Slaps yourself or @ another member")
+async def slap(ctx):
+  await slapImport(ctx)
 '''
 @bot.event
 # sends "so tru" or "morning @author" depending on message given
@@ -115,8 +152,8 @@ async def slap(ctx, member:discord.User=None):
       await ctx.send(f"{ctx.message.author.mention} slaps {member.mention}!")
 '''
 
-# keeping the bot online and obtaining secret token to make it run
-#keep_alive()
-#token = os.environ['TOKEN']
-#bot.run(token)
+#keeping the bot online and obtaining secret token to make it run
+keep_alive()
+token = os.environ['TOKEN']
+bot.run(token)
   

@@ -13,9 +13,9 @@ bot = commands.Bot(command_prefix="$", activity=activity)
 
 print("eventBot works")
 
-@bot.event
+
 # sends "so tru" or "morning @author" depending on message given
-async def on_message(message):
+async def messager(message):
   if message.content == "tru" or message.content == "Tru":
     await message.channel.send('so tru')
   if message.content == "morning":
@@ -31,6 +31,9 @@ async def on_message(message):
   await bot.process_commands(message)
 
 # keeping the bot online and obtaining secret token to make it run
+
 keep_alive()
-token = os.environ['TOKEN']
-bot.run(token)
+#token = os.environ['TOKEN']
+#print('t')
+#bot.run(token)
+#print('l')

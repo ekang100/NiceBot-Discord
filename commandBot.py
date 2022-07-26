@@ -22,56 +22,47 @@ roasts = ["stupid", "mean", "a bully", "boring", "lame", "racist", "sexist", "ug
 ccpRoleId = '<@&904767274131529738>'
 karemRoleId = '<@&904767810427838495>'
 
-@bot.command(brief="says ccp is the greatest")
 # messages "@ccp is the greatest" when '$eric' is sent
 # ccp stands for creamcheesepotato
-async def eric(ctx):
+async def ericImport(ctx):
   await ctx.channel.send(ccpRoleId + " is the greatest")
 
-
-@bot.command(brief="says karem kares")
 # messages "@karem kares" when '$karen' is sent
-async def karen(ctx):
+async def karenImport(ctx):
   await ctx.channel.send(karemRoleId + " kares")
 
-
-@bot.command(brief="Says good morning")
 # replies "good morning @specified_user or @author if no specification"
-async def morning(ctx, member:discord.User=None):
+async def morningImport(ctx, member:discord.User=None):
   if (member == ctx.message.author or member == None):
     await ctx.channel.send(f"Good morning {ctx.message.author.mention}!")
   else:
     await ctx.send(f"Good morning {member.mention}!")
 
-
-@bot.command(brief="Compliment yourself or @ another member")
 # sends a compliment from list compliments; pings yourself if nobody else is specified, or pings specified member
-async def compliment(ctx, member:discord.User=None):
+async def complimentImport(ctx, member:discord.User=None):
   if (member == ctx.message.author or member == None):
     await ctx.channel.send(f"{ctx.message.author.mention} says that they are {random.choice(compliments)}")
   else:
     await ctx.send(f"{ctx.message.author.mention} says that {member.mention} is {random.choice(compliments)}")
 
 
-@bot.command(brief="Roast yourself or @ another member")
+
 # same as compliment command but sends a roast instead
-async def roast(ctx, member:discord.User=None):
+async def roastImport(ctx, member:discord.User=None):
   if (member == ctx.message.author or member == None):
     await ctx.channel.send(f"{ctx.message.author.mention} says that they are {random.choice(roasts)}")
   else:
     await ctx.send(f"{ctx.message.author.mention} says that {member.mention} is {random.choice(roasts)}")
 
-
-@bot.command(brief="Says pong")
 # says "pong" in response to ping command
-async def ping(ctx):
+async def pong(ctx):
 	await ctx.channel.send("pong")
 
 
-@bot.command(brief="Slaps yourself or @ another member")
+
 # slaps a pinged member if specified, slaps author if not specified
 #@commands.cooldown(1, 2, commands.BucketType.user)
-async def slap(ctx, member:discord.User=None):
+async def slapImport(ctx, member:discord.User=None):
   if (member == ctx.message.author or member == None):
       await ctx.send(f"{ctx.message.author.mention} slaps themselves!") 
   else:
@@ -79,5 +70,5 @@ async def slap(ctx, member:discord.User=None):
 
 # keeping the bot online and obtaining secret token to make it run
 keep_alive()
-token = os.environ['TOKEN']
-bot.run(token)
+#token = os.environ['TOKEN']
+#bot.run(token)
